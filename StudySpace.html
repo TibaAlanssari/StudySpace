@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>StudySpace</title>
+	
+<!--Linking-->	
+<!-- Bootstrap CSS -->	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- Bootstrap JS-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!--Linking my CSS and JS file-->
+<link rel="stylesheet" href="StudySpace.css"/>
+<script src="StudySpace.js"></script>
+
+<!--Linking Google Font & my Font Awesome kit -->
+<link 
+href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" 
+rel="stylesheet"
+/>
+<script src="https://kit.fontawesome.com/9bfa4e023d.js" crossorigin="anonymous"></script>
+
+</head>
+<body onload="template()">
+    <div class="container">
+	<!--Main Heading-->
+	<h1 class="text-center my-5 heading">Study Space</h1>
+	
+	<!--Main Timer-->
+	<div class="container timer">
+		<div class="row">
+			<div class="col-5">
+				<h4 id='minutes'></h4>
+			</div>
+			<div class="col-2">
+				<h4>:</h4>
+			</div>
+			<div class="col-5">
+				<h4 id='seconds'></h4>
+			</div>
+		</div>		
+	</div>
+
+	<div>
+		<h3 id="complete" class="text-center my-5"></h3>
+	</div>
+
+	<!--Buttons (Start, Reset, Pause)-->
+	<div class= "container d-flex justify-content-center align-items-center my-5">
+		<button class="btn" onclick="start()"><i class="far fa-play-circle fa-2x"></i></button>
+		<a href="StudySpace.html"><i class="fas fa-undo-alt fa-2x"></i></a>
+	</div>
+</div>
+
+</body>
+</html>
