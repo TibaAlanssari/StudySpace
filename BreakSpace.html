@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> About StudySpace</title>
+	<title>Break Room</title>
 	
 <!--Linking-->	
 <!-- Bootstrap CSS -->	
@@ -13,8 +13,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <!--Linking my CSS and JS file-->
-<link rel="stylesheet" href="StudySpace.css"/>
-<script src="AboutStudySpace.js"></script>
+<link rel="stylesheet" href="BreakSpace.css"/>
+<script src="BreakSpace.js"></script>
 
 
 <!--Linking Google Font & my Font Awesome kit -->
@@ -56,14 +56,40 @@ rel="stylesheet"
 	</div>
 </nav>
 
+
     <div class="container">
-        <!--Main Heading-->
-        <h1 class="heading">About</h1>
-        <h2 class="questions">Why StudySpace?</h2>
-        <p class="paragraphs">StudySpace is a virtual study space environment that takes into account scientific research 🔬 and optimizes such findings as best as possible to create an effective place for studying virtually 📚.</p>
-        <h1 class="heading">Our Story</h1>
-        <h2 class="questions">How StudySpace Was Born:</h2>
-        <p class="paragraphs">COVID has opened our eyes to new challenges students now face due to online learning 💻. Home to many is a distracting environment, with small shared spaces and extra noise, it can be hard to effectively study. This is why we have created StudySpace! Though we can not provide a physical environment for studying, a virtual environment can be just as helpful! 🤓</p>
-    </body>
-    </html>
-    
+	<!--Main Heading-->
+	<h1 class="heading">Break Space</h1>
+	
+	<!--Main Timer-->
+	<div class="container timer">
+		<div class="row">
+			<div class="col-5">
+				<h4 id='minutes'></h4>
+			</div>
+			<div class="col-2">
+				<h4>:</h4>
+			</div>
+			<div class="col-5">
+				<h4 id='seconds'></h4>
+			</div>
+		</div>		
+	</div>
+
+	<div>
+		<h3 id="complete" class="text-center my-5"></h3>
+	</div>
+
+	<!--Buttons (Start, Reset, Pause)-->
+	<div class= "container d-flex justify-content-center align-items-center my-5">
+		<button class="btn" onclick="start()"><i class="far fa-play-circle fa-2x"></i></button>
+		<a href="StudySpace.html"><i class="fas fa-undo-alt fa-2x"></i></a>
+	</div>
+
+ 
+ 
+</div>
+
+
+</body>
+</html>

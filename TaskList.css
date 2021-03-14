@@ -1,0 +1,211 @@
+/*Tasks List*/
+
+* {
+  /*removing basic styling*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(120deg, #609cf0, #e9d0f0);
+  font-family: "Roboto", sans-serif;
+  background-size: 100% 1%;
+
+  height: 100px;
+}
+
+header,
+form {
+  min-height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  color: black;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-weight: lighter;
+}
+
+form input,
+form button {
+  padding: 1rem;
+  font-size: 1rem;
+  border: none;
+  background: white;
+}
+
+form button {
+  color: #a7918a;
+  background: white;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+form button:hover {
+  background: #a7918a;
+  color: white;
+}
+
+.ToDo-Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ToDo-List {
+  min-width: 35%;
+  list-style: none;
+}
+
+.ToDo {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.09s ease;
+}
+
+.ToDo li {
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  background: #bedaff;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.complete-btn {
+  background: rgb(151, 248, 151);
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+  /*cant click on logos anymore*/
+}
+
+.ToDo-Item {
+  padding: 0.5rem 0.5rem;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: rgb(196, 0, 26);
+  opacity: 0.5;
+}
+
+/*animation for button fall*/
+
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+/*Navigation Bar*/
+nav {
+  display: flex; /*Comes next to eachother*/
+  justify-content: space-around; /*spacing*/
+  align-items: center;
+  min-height: 8vh;
+  background-color: white;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: rebeccapurple;
+  text-decoration: none;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+.logo {
+  letter-spacing: 5px;
+  font-weight: lighter;
+  padding: 5px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+.burger div {
+  width: 25px;
+  height: 2px;
+  background-color: rebeccapurple;
+  margin: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-links {
+    position: absolute;
+    background-color: white;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+
+    transform: translateX(100%); /*moves container off screen*/
+    transition: transform 0.4s ease-in;
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}

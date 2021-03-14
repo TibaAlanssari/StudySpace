@@ -1,7 +1,7 @@
 //adding miuntes and seconds following Pomodoro cycles
 
 //timer variables
-var minutes = 25;
+var minutes = 5;
 var seconds = "00"; 
 
 //audio variables
@@ -22,7 +22,7 @@ function template(){
 function start(){
     bell.play();
 
-    minutes = 24;
+    minutes = 4;
     seconds = 59;
 
     document.getElementById("minutes").innerHTML = minutes;
@@ -84,78 +84,4 @@ const navigationSlide = () => {
     });
 
     
-}
-
-
-//Tasks list:
-
-//selectors
-const todoInput = document.querySelector(".ToDo-Input");
-const todoButton = document.querySelector(".ToDo-Button");
-const todoList = document.querySelector(".ToDo-List");
-
-//Event Listners
-todoButton.addEventListener("click", addToDo);
-todoList.addEventListener('click', deleteCheck);
-
-
-
-//Functions
-
-/*adding ToDo list*/
-function addToDo(event) {
-    event.preventDefault(); //prevnets from submitting
-
-    const todoDiv = document.createElement("div");
-    todoDiv.classList.add("ToDo");
-    //Create LI
-    const newtodo = document.createElement("li");
-    newtodo.innerText = todoInput.value;
-    newtodo.classList.add('ToDo-Item');
-    todoDiv.appendChild(newtodo);
-
-    //Buttons
-    //check mark button
-    const completedButton = document.createElement('button');
-    completedButton.innerHTML = '<i class = "fas fa-check"></i>' //can add like this or use create element 
-    completedButton.classList.add("complete-btn");
-    todoDiv.appendChild(completedButton);
-
-
-    //check trash button
-    const trashButton = document.createElement('button');
-    trashButton.innerHTML = '<i class = "fas fa-trash"></i>' //can add like this or use create element 
-    trashButton.classList.add("trash-btn");
-    todoDiv.appendChild(trashButton);
-
-    //Append to do list 
-    todoList.appendChild(todoDiv);
-
-    //Clear to do input value once inputed
-    todoInput.value = " ";
-}
-
-
-function deleteCheck(e) {
-
-    const itemClicked = e.target;
-
-    //deleting to do 
-    if (itemClicked.classList[0] === 'trash-btn') {
-        const ToDo = itemClicked.parentElement;
-        //animation
-        ToDo.classList.add("fall");
-        // ToDo.remove();
-        ToDo.addEventListener("transitionend", function() {
-            ToDo.remove();
-        });
-
-    }
-
-    //Check mark
-    if (itemClicked.classList[0] === "complete-btn") {
-        const ToDo = itemClicked.parentElement;
-        ToDo.classList.toggle("completed");
-    }
-
 }
